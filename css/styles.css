@@ -1,0 +1,167 @@
+body{
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #6f1c46;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Escudos */
+header .escudo {
+    height: 70px; /* Ajusta el tamaño según sea necesario */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header .escudo-izquierda {
+    left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+}
+header .escudo-derecha {
+    right: 10px; /* Ajusta el margen derecho según sea necesario */
+}
+
+h2 {
+    margin-top: 20px; /* Espacio entre el header y el título */
+}
+
+form p {
+    margin-top: 20px; /* Espacio entre los párrafos de plan de estudios y unidad de aprendizaje */
+}
+
+/* Animacion de carga */
+.loader {
+    --dim: 3rem;
+    width: var(--dim);
+    height: var(--dim);
+    position: fixed; /* Cambiado a fixed para que se posicione en el centro de la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin988 5s linear infinite;
+    z-index: 1000; /* Para asegurarse de que el loader esté por encima de todo el contenido */
+  }
+  
+  .loader .circle {
+    --color: #333;
+    --dim: 1.2rem;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+  }
+  
+  .loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+  
+  @keyframes spin988 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+  
+    20%, 25% {
+      transform: scale(1.3) rotate(90deg);
+    }
+  
+    45%, 50% {
+      transform: scale(1) rotate(180deg);
+    }
+  
+    70%, 75% {
+      transform: scale(1.3) rotate(270deg);
+    }
+  
+    95%, 100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+
+/* Estilos para los select personalizados */
+
+  .custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px; /* Espacio entre los select */
+  }
+  
+  .custom-select select {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #00355F; /* Color azul oscuro del IPN */
+    border-radius: 5px;
+    background-color: #10a53d; /* Color verde */
+    color: #fff; /* Texto blanco */
+    appearance: none;
+  }
+  
+  .custom-select select:focus {
+    outline: none;
+    border-color: #ffed00; /* Color amarillo del IPN al enfocar */
+    background-color: #fff; /* Fondo blanco al enfocar */
+    color: #00355F; /* Texto azul oscuro al enfocar */
+    box-shadow: 0 0 0 2px rgba(255, 237, 0, 0.2); /* Sombra amarilla al enfocar */
+  }
+  
+  /* Estilos adicionales si deseas modificar la apariencia de las opciones desplegables */
+  .custom-select select option {
+    padding: 10px;
+    background-color: #6f1c46; /* Color rojo del IPN */
+    color: #fff; /* Texto blanco */
+  }
+  
+  .custom-select select option:hover {
+    background-color: #00355F; /* Color azul oscuro del IPN al pasar el ratón */
+    color: #fff; /* Texto blanco al pasar el ratón */
+  }
+
+  /* Estilo del contenedor del resultado */
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #00355F; /* Color azul oscuro del IPN */
+    border-radius: 5px;
+    background-color: #fff;
+    color: #00355F;
+    font-size: 16px;
+}
+
+/* Estilo para los atributos de egreso */
+.resultado-atributo {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #6f1c46; /* Color rojo del IPN */
+}
+
+/* Estilo para los niveles de contribución */
+.resultado-nivel {
+    color: #10a53d; /* Color verde */
+}
