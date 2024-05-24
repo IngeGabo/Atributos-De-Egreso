@@ -29,7 +29,9 @@ header .escudo-derecha {
 }
 
 h2 {
-    margin-top: 20px; /* Espacio entre el header y el título */
+    margin-top: 40px; /* Espacio entre el header y el título */
+    margin-bottom: 40px; /* Agregar espacio entre el título y los botones */
+    text-align: center; /* Centra el texto */
 }
 
 form p {
@@ -100,68 +102,296 @@ form p {
       transform: scale(1) rotate(360deg);
     }
   }
-
+  
 /* Estilos para los select personalizados */
 
-  .custom-select {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 20px; /* Espacio entre los select */
-  }
-  
-  .custom-select select {
-    display: inline-block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    border: 1px solid #00355F; /* Color azul oscuro del IPN */
-    border-radius: 5px;
-    background-color: #10a53d; /* Color verde */
-    color: #fff; /* Texto blanco */
-    appearance: none;
-  }
-  
-  .custom-select select:focus {
-    outline: none;
-    border-color: #ffed00; /* Color amarillo del IPN al enfocar */
-    background-color: #fff; /* Fondo blanco al enfocar */
-    color: #00355F; /* Texto azul oscuro al enfocar */
-    box-shadow: 0 0 0 2px rgba(255, 237, 0, 0.2); /* Sombra amarilla al enfocar */
-  }
-  
-  /* Estilos adicionales si deseas modificar la apariencia de las opciones desplegables */
-  .custom-select select option {
-    padding: 10px;
-    background-color: #6f1c46; /* Color rojo del IPN */
-    color: #fff; /* Texto blanco */
-  }
-  
-  .custom-select select option:hover {
-    background-color: #00355F; /* Color azul oscuro del IPN al pasar el ratón */
-    color: #fff; /* Texto blanco al pasar el ratón */
-  }
 
-  /* Estilo del contenedor del resultado */
-#resultado {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #00355F; /* Color azul oscuro del IPN */
-    border-radius: 5px;
-    background-color: #fff;
-    color: #00355F;
-    font-size: 16px;
-}
 
-/* Estilo para los atributos de egreso */
-.resultado-atributo {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #6f1c46; /* Color rojo del IPN */
-}
+/* Estilo del contenedor del resultado */
+
+
+
 
 /* Estilo para los niveles de contribución */
 .resultado-nivel {
-    color: #10a53d; /* Color verde */
+  color: #00833d;
+  font-weight: bold;
+  font-size: 15px;
+}
+/* Estilo para los atributos de egreso */
+.resultado-atributo {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #6f1c46; /* Color rojo del IPN */
+  font-size: 15px;
+}
+
+.texto{
+  font-size: 15px;
+  color: #000000;
+  
+}
+.resultado{
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2e2aba; /* Color rojo del IPN */
+  font-size: 15px;
+}
+
+#informaticaB{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    border-color: #ffffff;
+}
+
+#industrialB{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    border-color: #ffffff;
+}
+
+#transporteB{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    border-color: #ffffff;
+}
+#planes {
+  display: flex; /* Asegúrate de que los botones estén en línea */
+  justify-content: center; /* Centra los botones horizontalmente */
+  flex-wrap: wrap; /* Asegúrate de que los botones se envuelvan si no caben en una sola fila */
+}
+
+#planes button {
+  margin-right: 50px; /* Agrega un margen derecho de 10px entre los botones */
+  margin-top: 50px;
+  align-items: center;
+  
+}
+
+.atributo {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
+}
+
+.highlight {
+  background-color: green;
+  color: yellow;
+  font-weight: bold;
+}
+
+.atributo span:last-child {
+  color: black;
+  font-weight: normal;
+}
+
+
+
+.icono-plan {
+  margin-bottom: 10px; /* Espacio entre el icono y el nombre del plan */
+  
+}
+
+.nombre-plan {
+  font-size: 14px; /* Tamaño de fuente del nombre del plan */
+  padding: 10px; /* Agregar relleno alrededor del texto */
+}
+
+.plan-icon {
+  width: 100px; /* Ajusta el tamaño deseado para todos los iconos */
+  height: 100px; /* Ajusta el tamaño deseado para todos los iconos */
+  object-fit: cover; /* Para que la imagen ocupe todo el espacio disponible */
+  border-radius: 10px; /* Un borde redondeado para hacerlo un poco más cuadrado */
+
+}
+
+
+
+/* Ajuste del contenedor del resultado para asegurarse de que no se corte el contenido */
+#resultado {
+  display: none;
+  margin-top: 20px; /* Agregar margen superior */
+  padding: 10px; /* Agregar relleno alrededor del contenido */
+  border: 0px solid #005f39; /* Agregar borde sólido */
+  border-radius: 0px; /* Agregar bordes redondeados */
+  background-color: #fff; /* Color de fondo */
+  color: #131602; /* Color de texto */
+  font-size: 16px; /* Tamaño de fuente */
+  width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
+  overflow: auto; /* Asegurarse de que el contenido no se corte y permita el desplazamiento si es necesario */
+  word-wrap: break-word; /* Permitir que las palabras largas se dividan en varias líneas */
+  box-sizing: border-box; /* Asegurarse de que el padding y el border estén incluidos en el ancho y alto */
+}
+
+/* Ajuste del tamaño de fuente y del contenedor para pantallas medianas */
+@media (max-width: 768px) {
+  #resultado {
+    font-size: 13px; /* Tamaño de fuente más pequeño en pantallas medianas */
+    padding: 8px; /* Relleno ajustado */
+  }
+  .resultado-atributo{
+    font-size: 13px;
+  }
+  .resultado-nivel{
+    font-size: 13px;
+  }
+  .texto{
+    font-size: 13px;
+  }
+  .resultado{
+    font-size: 15px;
+  }
+}
+
+/* Ajuste del tamaño de fuente y del contenedor para pantallas pequeñas */
+@media (max-width: 480px) {
+  #resultado {
+    font-size: 11px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+    padding: 6px; /* Relleno ajustado */
+  }
+  .resultado-atributo{
+    font-size: 11px;
+  }
+  .resultado-nivel{
+    font-size: 11px;
+  }
+  .texto{
+    font-size: 11px;
+  }
+  .resultado{
+    font-size: 13px;
+  }
+}
+
+
+
+
+.back-button {
+  display: block; /* Asegúrate de que el botón sea un bloque para posicionarlo correctamente */
+  margin: 20px 0; /* Centra el botón horizontalmente */
+  background-color: #6f1c46; /* Color de fondo del botón */
+  color: #fff; /* Color del texto de la flecha */
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano para indicar que es clicable */
+  font-size: 20px; /* Tamaño de fuente para la flecha */
+  align-self: left;
+}
+
+
+
+.back-button:hover {
+  background-color: #5a1538; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.plans{
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  #planes button {
+    width: 100%; /* Ajusta el margen derecho para dispositivos móviles */
+  }
+  
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.animated-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+#unidad {
+  background-color: #C6E2F5; /* Cambia el color de fondo */
+  border: 1px solid #00796b; /* Cambia el color del borde */
+  color: black; /* Cambia el color del texto */
+  padding: 10px; /* Agrega relleno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de la fuente */
+  width: 100%; /* Ancho del 100% del contenedor */
+  box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total */
+}
+
+#unidad:focus {
+  background-color: #b2ebf2; /* Cambia el color de fondo cuando el input está enfocado */
+  border-color: #004d40; /* Cambia el color del borde cuando el input está enfocado */
+  outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+#banner {
+  display: none; 
+  justify-content: center; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#banner2 {
+  display: none; 
+  justify-content: center; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+#banner3 {
+  display: none; 
+  justify-content: center; 
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Estilo para las imágenes del banner */
+#banner img, #banner2 img, #banner3 img {
+  width: 30%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  margin: 0 10px; /* Margen horizontal para separar las imágenes */
+  animation: fadeInOutBannerImages 6s ease-in-out forwards; /* Aplica la animación */
+}
+
+/* Animación para las imágenes del banner */
+@keyframes fadeInOutBannerImages {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
