@@ -81,11 +81,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 span1.classList.add('highlight');
                 span1.textContent = parts[0] + ': ';
 
+                const br = document.createElement('br'); // Crear un elemento de salto de línea
+
                 const span2 = document.createElement('span');
                 span2.textContent = parts[1];
 
                 const p = document.createElement('p');
                 p.appendChild(span1);
+                p.appendChild(br);
                 p.appendChild(span2);
                 p.classList.add('atributo');
                 resultParagraph.appendChild(p);
