@@ -1,0 +1,295 @@
+body{
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #6f1c46;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Escudos */
+header .escudo {
+    height: 70px; /* Ajusta el tamaño según sea necesario */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+header .escudo-izquierda {
+    left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+}
+header .escudo-derecha {
+    right: 10px; /* Ajusta el margen derecho según sea necesario */
+}
+
+h2 {
+    margin-top: 40px; /* Espacio entre el header y el título */
+    margin-bottom: 40px; /* Agregar espacio entre el título y los botones */
+    text-align: center; /* Centra el texto */
+}
+
+form p {
+    margin-top: 20px; /* Espacio entre los párrafos de plan de estudios y unidad de aprendizaje */
+}
+
+/* Animacion de carga */
+.loader {
+    --dim: 3rem;
+    width: var(--dim);
+    height: var(--dim);
+    position: fixed; /* Cambiado a fixed para que se posicione en el centro de la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin988 5s linear infinite;
+    z-index: 1000; /* Para asegurarse de que el loader esté por encima de todo el contenido */
+  }
+  
+  .loader .circle {
+    --color: #333;
+    --dim: 1.2rem;
+    width: var(--dim);
+    height: var(--dim);
+    background-color: var(--color);
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .loader .circle:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(2) {
+    top: 0;
+    right: 0;
+  }
+  
+  .loader .circle:nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .loader .circle:nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+  
+  @keyframes spin988 {
+    0% {
+      transform: scale(1) rotate(0);
+    }
+  
+    20%, 25% {
+      transform: scale(1.3) rotate(90deg);
+    }
+  
+    45%, 50% {
+      transform: scale(1) rotate(180deg);
+    }
+  
+    70%, 75% {
+      transform: scale(1.3) rotate(270deg);
+    }
+  
+    95%, 100% {
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  
+/* Estilos para los select personalizados */
+
+
+
+/* Estilo del contenedor del resultado */
+
+
+
+
+/* Estilo para los niveles de contribución */
+.resultado-nivel {
+  color: #008854;
+  font-weight: bold;
+  font-size: 15px;
+}
+/* Estilo para los atributos de egreso */
+.resultado-atributo {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #6f1c46; /* Color rojo del IPN */
+  font-size: 15px;
+}
+/*Texto extra en el resultado*/
+.texto{
+  font-size: 15px;
+  color: #000000;
+  
+}
+/*Resultado es la materia que se muestra en el resultado*/
+.resultado{
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2e2aba; 
+  font-size: 15px;
+}
+/*Estilo para los botones de los planes de estudio*/
+#informaticaB, #industrialB, #transporteB {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    border-color: #ffffff;
+    margin-right: 50px; /* Agrega un margen derecho de 10px entre los botones */
+    margin-top: 50px;
+    align-items: center;
+}
+
+
+/*Estilo para los botones de los planes de estudio*/
+#planes {
+  display: flex; /* Asegúrate de que los botones estén en línea */
+  justify-content: center; /* Centra los botones horizontalmente */
+  flex-wrap: wrap; /* Asegúrate de que los botones se envuelvan si no caben en una sola fila */
+}
+
+
+/*Es para el texto de la descripcion del atributo*/
+.atributo {
+  margin-top: 40px;
+  /*font-weight: bold;*/
+  color: #000000; /* Color rojo del IPN */
+  font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
+  
+  padding: 3px 10px;
+  
+}
+
+/*Es para el texto del nombre del atributo*/
+.atributo2 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffff00; /* Color rojo del IPN */
+  font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
+  background-color: #008000;
+
+}
+
+/*Estilo para los iconos de los planes de estudio*/
+.icono-plan {
+  margin-bottom: 10px; /* Espacio entre el icono y el nombre del plan */
+  
+}
+/*Estilo para los nombres de los planes de estudio*/
+.nombre-plan {
+  font-size: 15px; /* Tamaño de fuente del nombre del plan */
+  padding: 10px; /* Agregar relleno alrededor del texto */
+}
+
+.plan-icon {
+  width: 100px; /* Ajusta el tamaño deseado para todos los iconos */
+  height: 100px; /* Ajusta el tamaño deseado para todos los iconos */
+  object-fit: cover; /* Para que la imagen ocupe todo el espacio disponible */
+  border-radius: 10px; /* Un borde redondeado para hacerlo un poco más cuadrado */
+
+}
+
+#resultado {
+  display: none;
+  margin-top: 20px; /* Agregar margen superior */
+  padding: 10px; /* Agregar relleno alrededor del contenido */
+  border: 0px solid #000d5f; /* Agregar borde sólido */
+  border-radius: 0px; /* Agregar bordes redondeados */
+  width: 100%; /* Asegurarse de que ocupe todo el ancho disponible */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
+  word-wrap: break-word; /* Permitir que las palabras largas se dividan en varias líneas */
+}
+
+/*Boton de regresar*/
+.back-button {
+  display: block; /* Asegúrate de que el botón sea un bloque para posicionarlo correctamente */
+  margin: 20px 0; /* Centra el botón horizontalmente */
+  background-color: #6f1c46; /* Color de fondo del botón */
+  color: #fff; /* Color del texto de la flecha */
+  border: none; /* Sin borde */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de mano para indicar que es clicable */
+  font-size: 20px; /* Tamaño de fuente para la flecha */
+  align-self: left;
+}
+
+.back-button:hover {
+  background-color: #5a1538; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.plans{
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  #planes button {
+    width: 100%; /* Ajusta el margen derecho para dispositivos móviles */
+  }
+  
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
+
+.animated-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid black;
+  animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+  
+}
+
+/*Estilo para el input de la unidad de aprendizaje cuando no esta seleccionado*/
+#unidad {
+  background-color: #C6E2F5; /* Cambia el color de fondo */
+  border: 1px solid #00796b; /* Cambia el color del borde */
+  color: black; /* Cambia el color del texto */
+  padding: 10px; /* Agrega relleno */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px; /* Tamaño de la fuente */
+  width: 100%; /* Ancho del 100% del contenedor */
+  box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total */
+}
+
+/*Interior del input cuando esta seleccionado*/
+#unidad:focus {
+  background-color: #b2ebf2; /* Cambia el color de fondo cuando el input está enfocado */
+  border-color: #004d40; /* Cambia el color del borde cuando el input está enfocado */
+  outline: none; /* Elimina el borde de enfoque predeterminado */
+}
+
+
+
