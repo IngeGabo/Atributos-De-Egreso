@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             if (contribuciones.length > 0) {
-                resultParagraph.innerHTML = `<span class="texto">La unidad </span> <span class="resultado">'${selectedUnidad}'</span> <span class="texto">contribuye a:</span><br>-${contribuciones.join('<br>-')}<br>`;
+                resultParagraph.innerHTML = `<span class="texto">La unidad de aprendizaje: </span> <span class="resultado">'${selectedUnidad}'</span> <span class="texto">contribuye a:</span><br>-${contribuciones.join('<br>-')}<br>`;
                 displayAttributes(document.querySelector('button[data-plan].active')?.getAttribute('data-plan'));
             } else {
                 resultParagraph.innerHTML = `La unidad '${selectedUnidad}' no contribuye a ningún atributo de egreso conocido.`;

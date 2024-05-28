@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     
-        <title>UPIICSA</title>
-    <link rel="icon" href="Images/Escudos/escudo 2.png" type="image/png">
+        <title>Atributos de Egreso - Planes 2010</title>
+    <link rel="icon" href="Images/Escudos/escudo 1_2.png" type="image/png">
     <style>
         #unidad-section, #plan-text {
             display: none;
@@ -16,12 +16,13 @@
     </style>
 </head>
 <body>
-    <div id="loader" class="loader" style="display: none;">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
+    
+    <svg id="loader" class="loader" style="display: none;" class="pl" width="240" height="240" viewBox="0 0 240 240">
+        <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+    </svg>
     <header>
         <img src="Images/Escudos/escudo 1.png" alt="Escudo 1" class="escudo escudo-izquierda">
         <h1>UPIICSA</h1>
@@ -65,7 +66,7 @@
             
             <div id="unidad-section">
                 <p><b>Unidad de aprendizaje:</b></p>
-                <input list="unidades" id="unidad" class="form-control" onselect="showLoader()">
+                <input list="unidades" id="unidad" class="form-control" onselect="showLoader()" placeholder="SELECCIONAR">
                 <datalist id="unidades">
                     <!-- Las opciones se llenarán basado en la selección de plan -->
                 </datalist>

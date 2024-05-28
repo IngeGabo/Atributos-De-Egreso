@@ -6,12 +6,12 @@ body{
     padding: 0;
 }
 header{
-    background-color: #6f1c46;
+    background-color: #6A1236;
     color: #fff;
-    padding: 10px 0;
+    padding: 30px 0;
     text-align: center;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Escudos */
@@ -23,9 +23,17 @@ header .escudo {
 }
 header .escudo-izquierda {
     left: 10px; /* Ajusta el margen izquierdo según sea necesario */
+    margin-top: 0px; /* Ajusta el margen superior según sea necesario */
+    
+    margin-left: 10px;  /* Ajusta el margen izquierdo según sea necesario */
+    margin-right: 10px;
 }
 header .escudo-derecha {
     right: 10px; /* Ajusta el margen derecho según sea necesario */
+    margin-top: 0px; /* Ajusta el margen superior según sea necesario */
+    
+    margin-left: 10px;  /* Ajusta el margen izquierdo según sea necesario */
+    margin-right: 10px;
 }
 
 h2 {
@@ -114,29 +122,37 @@ form p {
 
 /* Estilo para los niveles de contribución */
 .resultado-nivel {
-  color: #008854;
+  color: #558A67;
   font-weight: bold;
   font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
 }
 /* Estilo para los atributos de egreso */
 .resultado-atributo {
   margin-top: 10px;
   font-weight: bold;
-  color: #6f1c46; /* Color rojo del IPN */
+  color: #6A1236; /* Color rojo del IPN */
   font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
 }
 /*Texto extra en el resultado*/
 .texto{
   font-size: 15px;
   color: #000000;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
   
 }
 /*Resultado es la materia que se muestra en el resultado*/
 .resultado{
   margin-top: 10px;
   font-weight: bold;
-  color: #2e2aba; 
+  color: #3F5D7C; 
   font-size: 15px;
+  white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
+  overflow: visible; /* Asegurarse de que el contenido no se corte */
 }
 /*Estilo para los botones de los planes de estudio*/
 #informaticaB, #industrialB, #transporteB {
@@ -220,7 +236,7 @@ form p {
 .back-button {
   display: block; /* Asegúrate de que el botón sea un bloque para posicionarlo correctamente */
   margin: 20px 0; /* Centra el botón horizontalmente */
-  background-color: #6f1c46; /* Color de fondo del botón */
+  background-color: #6A1236; /* Color de fondo del botón */
   color: #fff; /* Color del texto de la flecha */
   border: none; /* Sin borde */
   padding: 10px; /* Espaciado interno */
@@ -242,6 +258,17 @@ form p {
 @media screen and (max-width: 600px) {
   #planes button {
     width: 100%; /* Ajusta el margen derecho para dispositivos móviles */
+  }
+  #plan-icon {
+    width: 50px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
+    height: 50px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
+
+  }
+  #plan-text{
+    font-size: 10px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
+  }
+  #Resultado{
+    font-size: 10px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
   }
   
 }
@@ -274,23 +301,232 @@ form p {
 
 /*Estilo para el input de la unidad de aprendizaje cuando no esta seleccionado*/
 #unidad {
-  background-color: #C6E2F5; /* Cambia el color de fondo */
-  border: 1px solid #00796b; /* Cambia el color del borde */
+  background-color: #F1F1F1; /* Cambia el color de fondo */
+  border: 1px solid #000000; /* Cambia el color del borde */
   color: black; /* Cambia el color del texto */
   padding: 10px; /* Agrega relleno */
   border-radius: 5px; /* Bordes redondeados */
   font-size: 16px; /* Tamaño de la fuente */
-  width: 80%; /* Ancho del 100% del contenedor */
+  width: 90%; /* Ancho del 100% del contenedor */
   box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total */
   margin: 0 auto; /* Centra el elemento horizontalmente */
 }
 
 /*Interior del input cuando esta seleccionado*/
 #unidad:focus {
-  background-color: #b2ebf2; /* Cambia el color de fondo cuando el input está enfocado */
-  border-color: #004d40; /* Cambia el color del borde cuando el input está enfocado */
+  background-color: #F1F1F1; /* Cambia el color de fondo cuando el input está enfocado */
+  border-color: #000000; /* Cambia el color del borde cuando el input está enfocado */
   outline: none; /* Elimina el borde de enfoque predeterminado */
 }
 
+/* Estilo para el input de la unidad de aprendizaje */
+#unidad::placeholder {
+  color: #000000; /* Color del placeholder */
+  opacity: 1; /* Total opacidad para el placeholder */
+}
 
 
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #5A1236;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #5B262E;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #333;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #999;
+}
+
+/* Animations */
+@keyframes ringA {
+  from, 4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+
+  40%, 54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+
+  90%, to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+  from, 12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+
+  48%, 62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+
+  98%, to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  36%, 58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  94%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+  from, 8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+
+  44%, 50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+
+  86%, to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
