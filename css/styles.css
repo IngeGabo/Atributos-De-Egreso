@@ -136,6 +136,7 @@ form p {
   font-size: 15px;
   white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
   overflow: visible; /* Asegurarse de que el contenido no se corte */
+  text-align: justify;
 }
 /*Texto extra en el resultado*/
 .texto{
@@ -185,8 +186,9 @@ form p {
   font-size: 15px;
   white-space: normal; /* Permitir que el texto se ajuste en varias líneas */
   overflow: visible; /* Asegurarse de que el contenido no se corte */
-  
+  margin-bottom: 50px;
   padding: 3px 10px;
+  text-align: justify;/*Alinea el texto justificado*/
   
 }
 
@@ -234,22 +236,60 @@ form p {
 
 /*Boton de regresar*/
 .back-button {
-  display: block; /* Asegúrate de que el botón sea un bloque para posicionarlo correctamente */
-  margin: 20px 0; /* Centra el botón horizontalmente */
-  background-color: #6A1236; /* Color de fondo del botón */
-  color: #fff; /* Color del texto de la flecha */
-  border: none; /* Sin borde */
-  padding: 10px; /* Espaciado interno */
-  border-radius: 5px; /* Bordes redondeados */
-  cursor: pointer; /* Cursor de mano para indicar que es clicable */
-  font-size: 20px; /* Tamaño de fuente para la flecha */
-  align-self: left;
+ font-weight: 600;
+ color: #000000;
+ text-transform: uppercase;
+ padding: 0.75em 1.5em;
+ background: #fff0f0;
+ border: 2px solid #000000;
+ border-radius: 0.5em;
+ -webkit-transform-style: preserve-3d;
+ transform-style: preserve-3d;
+ -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+ transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
 }
 
+.back-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f9c4d2;
+  border-radius: inherit;
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.5em 0 0 #ffe3e2;
+  box-shadow: 0 0 0 2px #b18597, 0 0.625em 0 0 #ffe3e2;
+  -webkit-transform: translate3d(0, 0.5em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
 .back-button:hover {
-  background-color: #5a1538; /* Cambia el color de fondo al pasar el ratón */
+  background: #ffe9e9;
+  -webkit-transform: translate(0, 0.2em);
+ transform: translate(0, 0.25em);
 }
-
+.back-button:hover::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0.4em 0 0 #ffe3e2; /* Ajustar box-shadow */
+ box-shadow: 0 0 0 2px #b18597, 0 0.4em 0 0 #ffe3e2;
+ -webkit-transform: translate3d(0, 0.4em, -1em); /* Ajustar transform */
+ transform: translate3d(0, 0.4em, -1em);
+ }
+ 
+ .back-button:active {
+  background: #ffe9e9;
+ -webkit-transform: translate(0em, 0.5em); /* Ajustar transform */
+ transform: translate(0em, 0.5em);
+ }
+ 
+ .back-button:active::before {
+  -webkit-box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2; /* Ajustar box-shadow */
+ box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+ -webkit-transform: translate3d(0, 0, -1em); /* Ajustar transform */
+ transform: translate3d(0, 0, -1em);
+ }
 .plans{
   width: 200px;
   height: 200px;
@@ -269,6 +309,12 @@ form p {
   }
   #Resultado{
     font-size: 10px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
+  }
+  .back-button {
+    font-size: 10px !important; /* Ajusta el tamaño deseado para dispositivos móviles */
+  }
+  #floatingButton {
+    font-size: 10px;
   }
   
 }
@@ -301,27 +347,33 @@ form p {
 
 /*Estilo para el input de la unidad de aprendizaje cuando no esta seleccionado*/
 #unidad {
+  
   background-color: #F1F1F1; /* Cambia el color de fondo */
-  border: 1px solid #000000; /* Cambia el color del borde */
+  border: none; /* Cambia el color del borde */
   color: black; /* Cambia el color del texto */
-  padding: 10px; /* Agrega relleno */
-  border-radius: 5px; /* Bordes redondeados */
+  padding: 1rem; /* Agrega relleno */
+  border-radius: 1rem; /* Bordes redondeados */
   font-size: 16px; /* Tamaño de la fuente */
   width: 90%; /* Ancho del 100% del contenedor */
   box-sizing: border-box; /* Asegura que el relleno y el borde se incluyan en el ancho total */
   margin: 0 auto; /* Centra el elemento horizontalmente */
+  box-shadow: 20px 20px 60px #c5c5c5,
+		-20px -20px 60px #ffffff;
+  transition: 0.3s;
 }
 
 /*Interior del input cuando esta seleccionado*/
 #unidad:focus {
-  background-color: #F1F1F1; /* Cambia el color de fondo cuando el input está enfocado */
-  border-color: #000000; /* Cambia el color del borde cuando el input está enfocado */
-  outline: none; /* Elimina el borde de enfoque predeterminado */
+  outline-color: #e8e8e8;
+ background: #e8e8e8;
+ box-shadow: inset 20px 20px 60px #c5c5c5,
+		inset -20px -20px 60px #ffffff;
+ transition: 0.3s;
 }
 
 /* Estilo para el input de la unidad de aprendizaje */
 #unidad::placeholder {
-  color: #000000; /* Color del placeholder */
+  color: #333; /* Color del placeholder */
   opacity: 1; /* Total opacidad para el placeholder */
 }
 
@@ -530,3 +582,70 @@ form p {
     stroke-dashoffset: -440;
   }
 }
+/*Estilo boton flotante*/
+#floatingButtonContainer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+#floatingButton {
+  background-color: #6A1236;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#floatingButton i {
+  font-size: 24px; /* Ajustar tamaño del icono */
+}
+
+#floatingMenu {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background-color: rgb(255, 255, 255);
+  border: 0px solid #ffffff;
+  border-radius: 4px;
+  /*box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);*/
+  display: flex;
+  flex-direction: column;
+}
+
+#floatingMenu.hidden {
+  display: none;
+}
+
+#floatingMenu button {
+  background-color: #8f255b;
+  color: #ffffff;
+  border: 2px solid;
+  border-radius: 0.5em;
+  clip-path: insert(0 round 10px);
+  padding: 10px;
+  width: 180px;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#floatingMenu button:hover {
+  background-color: #5a1236;
+}
+
+svg{
+  margin-bottom: 80px;
+}
+
+
+

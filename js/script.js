@@ -6,14 +6,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const unidadDatalist = document.getElementById('unidades');
     const planText = document.getElementById('plan-text');
     const planIcon = document.getElementById('plan-icon');
+    const planLink = document.querySelector('#plan-icon-container a'); // Selecciona el elemento <a> que contiene la imagen
+    const floatingButton = document.getElementById('floatingButton');
+    const floatingMenu = document.getElementById('floatingMenu');
+    const downloadAttributesButton = document.getElementById('downloadAttributes');
     let unidadesData = [];
     let headers = [];
+    
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbybXLuDmQ5PJ1Zse51F1ouQgYa7OBrZt0nTMuPxnEIIufVPXIDh0KGegVS1JP_7r0f3rw/exec';
     
     const atributos = {
         "Informática": [
-            "AE1 1 Sistemas de Software: Implementa y administra sistemas de software de calidad mundial con base en la Ingeniería de Software para solucionar problemas de manipulación de datos, información y conocimiento en las organizaciones con base en la adaptabilidad en el uso de nuevas tecnologías debido a los cambios tecnológicos, propiciando el trabajo colaborativo, la disciplina, la proactividad, fomenta la ética profesional y el respeto.",
+            "AE1 Sistemas de Software: Implementa y administra sistemas de software de calidad mundial con base en la Ingeniería de Software para solucionar problemas de manipulación de datos, información y conocimiento en las organizaciones con base en la adaptabilidad en el uso de nuevas tecnologías debido a los cambios tecnológicos, propiciando el trabajo colaborativo, la disciplina, la proactividad, fomenta la ética profesional y el respeto.",
             "AE2 Infraestructura Computacional: Desarrolla la infraestructura computacional requerida para el diseño e implementación de las soluciones de software/hardware, fomenta la autonomía, la visión autocrítica, la ética profesional.",
             "AE3 Modelado de datos: Modela datos e información que sea de fácil implementación en las tecnologías apropiadas para optimizar su manipulación, fomenta la creatividad, la visión crítica y autocrítica, la responsabilidad, la disciplina, la ética profesional y el trabajo colaborativo.",
             "AE4 Soluciones de Hardware: Diseña soluciones de hardware e interfaces para la adquisición y manipulación de datos, promueve el trabajo en equipo, la tolerancia, la equidad, la responsabilidad y la ética profesional.",
@@ -42,15 +47,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const planese = {
         "Informática": {
             "name": "Ingeniería en Informática",
-            "icono": "Images/Iconos/ico-ig-informatica.png"
+            "icono": "Images/Iconos/ico-ig-informatica.png",
+            "enlace": "https://www.upiicsa.ipn.mx/assets/files/upiicsa/estudiantes/mallas-curriculares/ing-informatica/ae_plan2010.pdf"
         },
         "Industrial": {
             "name": "Ingeniería Industrial",
-            "icono": "Images/Iconos/ico-ig-industrial.png"
+            "icono": "Images/Iconos/ico-ig-industrial.png",
+            "enlace": "https://www.upiicsa.ipn.mx/assets/files/upiicsa/estudiantes/mallas-curriculares/ing-industrial/ae_plan2010.pdf"
         },
         "Transporte": {
             "name": "Ingeniería en Transporte",
-            "icono": "Images/Iconos/ico-transporte.png"
+            "icono": "Images/Iconos/ico-transporte.png",
+            "enlace": "https://www.upiicsa.ipn.mx/assets/files/upiicsa/estudiantes/mallas-curriculares/ingenieria-transporte/ae_plan2010.pdf"
         }
     };
     
@@ -76,14 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-    
-    
-    
-    
-    
-    
-    
-    
 
     function showLoader() {
         var loader = document.getElementById('loader');
@@ -199,6 +199,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 planText.textContent = planData.name; // Establecer el texto del plan desde el JSON
                 planText.style.display = 'block'; // Mostrar el texto del plan
+
+                planLink.href = planData.enlace; // Establecer el enlace desde el JSON
+                planLink.target = '_blank'; // Asegurarse de que el enlace se abra en una nueva pestaña
             } else {
                 console.error(`No data found for plan: ${plan}`);
             }
@@ -213,6 +216,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('backButton').style.display = 'block';
 
             showLoader(); // Mostrar el loader
+            // Mostrar el botón flotante
+            floatingButtonContainer.style.display = 'flex';
         });
     });
 
@@ -237,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
             if (contribuciones.length > 0) {
-                resultParagraph.innerHTML = `<span class="texto">La unidad de aprendizaje: </span> <span class="resultado">'${selectedUnidad}'</span> <span class="texto">contribuye a:</span><br>-${contribuciones.join('<br>-')}<br>`;
+                resultParagraph.innerHTML = `<span class="texto">La unidad de aprendizaje: </span> <span class="resultado">'${selectedUnidad}'</span> <span class="texto">contribuye a:</span><br><br>-${contribuciones.join('<br>-')}<br><br>`;
                 displayAttributes(document.querySelector('button[data-plan].active')?.getAttribute('data-plan'));
             } else {
                 resultParagraph.innerHTML = `La unidad '${selectedUnidad}' no contribuye a ningún atributo de egreso conocido.`;
@@ -258,5 +263,22 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('resultado').style.display = 'none'; // Limpiar el resultado
         planIcon.style.display = 'none'; // Ocultar el ícono
         planText.style.display = 'none';
+        planIcon.src = ''; // Limpiar la imagen del ícono
+        planLink.href = '#'; // Limpiar el enlace
+        unidadSection.style.display = 'none';
+        floatingButtonContainer.style.display = 'none'; // Ocultar el botón flotante
+    });
+    floatingButton.addEventListener('click', function () {
+        floatingMenu.classList.toggle('hidden');
+    });
+    downloadAttributesButton.addEventListener('click', function () {
+        const selectedPlan = document.querySelector('button[data-plan].active')?.getAttribute('data-plan');
+        const planData = planese[selectedPlan];
+
+        if (planData) {
+            window.open(planData.enlace, '_blank');
+        } else {
+            console.error(`No data found for selected plan: ${selectedPlan}`);
+        }
     });
 });
