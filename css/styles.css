@@ -627,16 +627,22 @@ form p {
 }
 
 #floatingMenu button {
-  background-color: #8f255b;
-  color: #ffffff;
-  border: 2px solid;
-  border-radius: 0.5em;
-  clip-path: insert(0 round 10px);
-  padding: 10px;
-  width: 180px;
-  text-align: left;
+  --main-focus: #2d8cf0;
+  --font-color: #323232;
+  --bg-color-sub: #dedede;
+  --bg-color: #eee;
+  --main-color: #323232;
+  position: relative;
+  width: 250px;
+  height: 40px;
   cursor: pointer;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 #floatingMenu button:hover {
